@@ -12,7 +12,7 @@ export const GifExpertApp = () => {
   return (
     <>
       <h1>GifExpertApp</h1>
-      
+
       <AddCategory 
           onNewCategory={ onAddCategory } />
 
@@ -22,7 +22,7 @@ export const GifExpertApp = () => {
           category={category} />
         ) 
       }
-
+      <h2> Realizado por el cepibolla </h2>
     </>
   )
 }
