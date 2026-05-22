@@ -1,7 +1,7 @@
 import { useFetchGifs } from "../hooks/useFetchGifs";
 import { GifItem } from "./GifItem";
 
-export const GifGrid = ({ category }) => {
+export const GifGrid = ({ category, onDownload}) => {
 
   const { images, isLoading } = useFetchGifs( category );
 
@@ -15,6 +15,7 @@ export const GifGrid = ({ category }) => {
           {images.map( image => 
             <GifItem key={image.id} 
                 { ...image }
+                onDownload={onDownload}
               />
           )}
         </div>

@@ -1,10 +1,10 @@
 * {
     font-family: Helvetica, Arial, sans-serif;
-    background-color: rgb(234, 234, 234);
   }
   
   body {
     padding: 60px;
+    background-color: rgb(234, 234, 234);
   }
   
   input {
@@ -43,10 +43,25 @@
     display: flex;
     flex-direction: column;
     height: 0%;  
+    position: relative;
     justify-content: center;
     margin-bottom: 20px;
     margin-right: 20px;
     overflow: hidden;
+    #download {
+      width: 20%;
+      opacity: 20%;
+      right: 0;
+      bottom: 0;
+      position: absolute;
+      /* transform: translateY(100%); */
+      transition: opacity 1s;
+      /* transition: transform 2s; */
+    }
+    #download:hover {
+      opacity: 100%;
+      /* transform: translateY(0%); */
+    }
   }
   
   .card p {
@@ -60,4 +75,54 @@
   
   .card img {
     width: 100%;
+  }
+
+  .modal-container {
+    position:fixed;
+    background-color: rgba(0, 0, 0, 0.789);
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    display: grid;
+    place-items: center;
+
+    .modal-body {
+      background-color: white;
+      width: 50%;
+      min-width: 400px;
+      height: auto;
+      min-height: 20vh ;
+      border-radius: 1rem;
+      display: grid;
+      justify-items: center;
+      position: relative;
+      padding: 1rem;
+      h3 {
+        margin: 1rem;
+      }
+      .confirm-buttons { 
+        button {
+          font-size: 30px;
+          &:first-child {
+            margin-right: 20px;
+          }
+        }
+
+      }
+
+      .modal-close {
+        position: absolute;
+        top: 0;
+        right: 0;
+        margin: .5rem;
+      }
+
+      img#sim {
+        width: 50%;
+        min-width: 50px;
+        min-height: 50px;
+      }
+
+    }
   }
